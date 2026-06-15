@@ -1,0 +1,839 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #0eb87f;
+    --green-dark: #0aa070;
+    --text: #1a1a2e;
+    --gray: #6b7280;
+    --light-bg: #f4f6f4;
+    --white: #fff;
+    --border: #e5e7eb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 4rem;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header p {
+    display: none;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+/* ===== NAV ===== */
+
+nav ul {
+    display: flex;
+    gap: 10px;
+
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: var(--text);
+
+    padding: 10px 16px;
+
+    border-radius: 40px;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    background: var(--light-bg);
+    color: var(--green);
+}
+
+.theme-toggle:hover {
+    color: var(--green);
+}
+
+/* ===== DARK MODE ===== */
+
+body {
+    transition:
+        background .35s ease,
+        color .35s ease;
+}
+
+header,
+#competences,
+#apropos section,
+#projets article,
+.contact-form,
+.form-input,
+.form-textarea,
+aside,
+footer,
+nav a,
+.skill-tag {
+    transition:
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+}
+
+/* Theme variables */
+
+body.dark-mode {
+    --white: #111827;
+    --light-bg: #1f2937;
+
+    --text: #f9fafb;
+
+    --gray: #cbd5e1;
+
+    --border: #374151;
+}
+
+/* Header */
+
+body.dark-mode header {
+    background: var(--white);
+}
+
+/* Navigation */
+
+body.dark-mode nav a:hover {
+    background: var(--green);
+}
+
+/* Hero */
+
+body.dark-mode #accueil p {
+    color: var(--gray);
+}
+
+/* Cards */
+
+body.dark-mode #apropos section,
+body.dark-mode #projets article,
+body.dark-mode .contact-form,
+body.dark-mode .skill-tag,
+body.dark-mode .form-input,
+body.dark-mode .form-textarea,
+body.dark-mode aside {
+    background: #1f2937;
+
+    border-color: var(--border);
+}
+
+/* Inputs */
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+    color: white;
+}
+
+body.dark-mode .form-input::placeholder,
+body.dark-mode .form-textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Footer */
+
+body.dark-mode footer {
+    background: #111827;
+    color: var(--gray);
+}
+
+/* Skills */
+
+body.dark-mode .skill-tag:hover {
+    background: rgba(14,184,127,.1);
+    color: var(--green);
+}
+
+/* Aside */
+
+body.dark-mode aside {
+    color: white;
+}
+
+/* Images */
+
+body.dark-mode img {
+    filter:
+        brightness(.95)
+        contrast(1.03);
+}
+
+/* Moon icon */
+
+body.dark-mode .theme-toggle {
+    color: #fbbf24;
+}
+
+
+/* ===== MAIN ===== */
+
+main {
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-inline:clamp(20px,5vw,80px);
+
+    overflow:hidden;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+h2 {
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 40px;
+    height: 3px;
+
+    background: var(--green);
+}
+
+/* ===== HERO ===== */
+
+#accueil {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    min-height: 80vh;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* ===== HERO IMAGE ===== */
+
+.hero-right{
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    min-height:550px;
+}
+
+/* Shape */
+
+.hero-right::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    background:#1b2430;
+
+    border-radius:
+        55% 45%
+        60% 40%
+        /
+        45% 55%
+        45% 55%;
+
+    z-index:0;
+}
+
+body:not(.dark-mode) .hero-right::before{
+    background:#ecfdf5;
+}
+
+
+#accueil img{
+    width:360px;
+    position:relative;
+    z-index:2;
+    display:block;
+    object-fit:contain;
+    transform: translateY(-25px); 
+    margin:auto;
+}
+/* ===== ABOUT ===== */
+
+#apropos section {
+    border-left: 4px solid var(--green);
+
+    padding: 1.5rem;
+
+    margin-bottom: 20px;
+
+    background: var(--light-bg);
+
+    border-radius: 8px;
+}
+
+/* ===== SKILLS ===== */
+
+#competences {
+    background: var(--light-bg);
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+.skills-group {
+    margin-bottom: 2rem;
+}
+
+.skills-group-title {
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+
+    color: var(--gray);
+}
+
+.skills-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 40px;
+
+    transition: .3s;
+}
+
+.skill-tag:hover {
+    border-color: var(--green);
+
+    color: var(--green);
+}
+
+/* ===== PROJECTS ===== */
+
+#projets article {
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+#projets article:hover {
+    border-color: var(--green);
+}
+
+#projets a {
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+/* ===== ASIDE ===== */
+
+aside {
+    background: #ecfdf5;
+
+    padding: 1.5rem;
+
+    border-radius: 10px;
+
+    margin: 3rem 0;
+}
+
+/* ===== CONTACT ===== */
+
+#contact {
+    padding: 6rem 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 760px;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 3rem;
+
+    backdrop-filter: blur(20px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    margin-bottom: .6rem;
+
+    color: var(--text);
+}
+
+.form-input,
+.form-textarea {
+
+    width: 100%;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    padding: 1rem 1.2rem;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    transition: .25s;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--gray);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+
+    outline: none;
+
+    border-color: var(--green);
+
+    box-shadow:
+    0 0 0 4px rgba(14,184,127,.12);
+}
+
+.form-textarea {
+    min-height: 180px;
+
+    resize: vertical;
+}
+
+.submit-btn {
+
+    width: fit-content;
+
+    min-width: 220px;
+
+    padding: 14px 30px;
+
+    border-radius: 999px;
+
+    background: var(--green);
+
+    color: white;
+
+    border: none;
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    display: block;
+
+    margin: 2rem auto 0;
+
+    transition: .25s;
+}
+
+.submit-btn:hover {
+
+    background: var(--green-dark);
+
+    transform: translateY(-2px);
+}
+
+/* ===== DARK MODE ===== */
+
+body.dark-mode .contact-form {
+
+    background:
+    rgba(31,41,55,.55);
+
+    border-color:
+    rgba(255,255,255,.08);
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+
+    background:
+    rgba(255,255,255,.02);
+
+    color: white;
+}
+
+body.dark-mode .form-input:focus,
+body.dark-mode .form-textarea:focus {
+
+    box-shadow:
+    0 0 0 4px rgba(14,184,127,.18);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.contact-form{
+    padding:2rem;
+}
+
+.submit-btn{
+    width:100%;
+}
+
+}
+
+
+.submit-btn:hover {
+    background: var(--green-dark);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+
+    padding: 2rem;
+
+    color: var(--gray);
+}
+
+/* ===== MOBILE ===== */
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* ===== TABLET ===== */
+
+@media (max-width:992px){
+
+header{
+    padding:1rem 2rem;
+}
+
+main{
+    padding:0 1.5rem;
+}
+
+#accueil{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:3rem;
+
+    min-height:auto;
+
+    padding:4rem 0;
+}
+
+.hero-left,
+.hero-right{
+    width:100%;
+}
+
+.hero-left{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+#accueil h3{
+    font-size:2.5rem;
+}
+
+#accueil p{
+    max-width:650px;
+}
+
+#accueil img{
+    width:300px;
+}
+
+#competences{
+    padding:2rem;
+}
+
+.contact-form{
+    max-width:100%;
+}
+
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    padding:1rem;
+}
+
+nav{
+    width:100%;
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:.5rem;
+}
+
+nav a{
+
+    padding:8px 14px;
+
+    font-size:.9rem;
+}
+
+main{
+
+    padding:0 1rem;
+}
+
+section{
+
+    padding:3rem 0;
+}
+
+/* HERO */
+
+#accueil{
+
+    padding:2rem 0;
+}
+
+#accueil h3{
+
+    font-size:2rem;
+}
+
+#accueil h4{
+
+    font-size:1.3rem;
+}
+
+#accueil img{
+
+    width:240px;
+}
+
+/* ABOUT */
+
+#apropos section{
+
+    padding:1rem;
+}
+
+/* SKILLS */
+
+#competences{
+
+    padding:1.5rem;
+}
+
+.skills-tags{
+
+    justify-content:center;
+}
+
+.skill-tag{
+
+    font-size:.9rem;
+}
+
+/* PROJECTS */
+
+#projets article{
+
+    padding:1.2rem;
+}
+
+#projets h3{
+
+    font-size:1rem;
+}
+
+/* CONTACT */
+
+.contact-form{
+
+    padding:1.5rem;
+}
+
+.submit-btn{
+
+    width:100%;
+}
+
+/* ASIDE */
+
+aside{
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+}
+
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width:480px){
+
+header h1{
+    font-size:1.1rem;
+}
+
+nav ul{
+
+    gap:5px;
+}
+
+nav a{
+
+    font-size:.8rem;
+
+    padding:8px 10px;
+}
+
+h2{
+
+    font-size:1.6rem;
+}
+
+#accueil h3{
+
+    font-size:1.7rem;
+}
+
+#accueil img{
+
+    width:200px;
+}
+
+.form-input,
+.form-textarea{
+
+    padding:12px;
+}
+
+.submit-btn{
+
+    padding:12px;
+}
+
+footer{
+
+    font-size:.8rem;
+}
+
+
+}

@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Ayoub Hadi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
     <header>
-        <h1>Ayoub Hadi</h1>
-        <p>Développeur Web | Virtual Assistant</p>
-    </header>
-
-    <nav>
+        <h1>Portfolio</h1>
+        <p>Full Stack Developer</p>
+         <nav>
         <ul>
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#apropos">À propos</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
-        </ul>
+            <li><a href="#" class="theme-toggle"><i class="fa-solid fa-moon"></i></a></li>
+
+        </ul>   
     </nav>
+    </header>
+
+   
 
     <main>
 
-        <section id="accueil">
-            <h2>Accueil</h2>
+<section id="accueil">
 
-            <img src="images/profile.jpg" alt="Photo de profil">
+<div class="hero-left">
+    <h3>Ayoub Hadi</h3>
+    <h4>Développeur Web Junior</h4>
 
-            <h3>Ayoub Hadi</h3>
+    <p>
+        Bienvenue sur mon portfolio.
+            Découvrez mon parcours, mes compétences
+            et mes réalisations.
+    </p>
+</div>
 
-            <h4>Développeur Web Junior</h4>
+<div class="hero-right">
+        <img src="imgs/LINKDinImage-removebg-preview.png" alt="Photo de profil">
+</div>
 
-            <p>
-                Bienvenue sur mon portfolio.
-                Découvrez mon parcours, mes compétences
-                et mes réalisations.
-            </p>
-        </section>
+</section>
 
         <article id="apropos">
 
@@ -68,55 +77,62 @@
 
         </article>
 
-        <section id="competences">
-
-            <h2>Compétences</h2>
-
-            <div>
-                <h3>HTML</h3>
-            </div>
-
-            <div>
-                <h3>CSS</h3>
-            </div>
-
-            <div>
-                <h3>JavaScript</h3>
-            </div>
-
-            <div>
-                <h3>PHP</h3>
-            </div>
-
-            <div>
-                <h3>MySQL</h3>
-            </div>
-
-        </section>
-
+       <section id="competences">
+  <h2>Compétences techniques</h2>
+  <div class="skills-group">
+    <p class="skills-group-title">Langages</p>
+    <div class="skills-tags">
+      <span class="skill-tag">Java</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">SQL</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">Front-end</p>
+    <div class="skills-tags">
+      <span class="skill-tag">HTML / CSS</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Tailwind CSS</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">Back-end</p>
+    <div class="skills-tags">
+      <span class="skill-tag">API REST</span>
+      <span class="skill-tag">Spring Boot</span>
+    </div>
+  </div>
+</section>
         <section id="projets">
 
             <h2>Projets</h2>
 
             <article>
-                <h3>Projet 1</h3>
-                <p>Description du projet.</p>
-                <p>Technologies : HTML, CSS, JavaScript</p>
-                <a href="#">GitHub</a>
+                <h3>Application de gestion HealthCare</h3>
+                <p>Conception et développement d'une API REST de gestion médicale (patients, médecins, rendez-vous, dossiers).</p>
+                <p>Technologies : Spring Boot/Security · Spring Data JPA · Docker · Swagger</p>
+                <a href="https://github.com/ENAA-School-Student/HealthCareAppAyoub">GitHub</a>
             </article>
 
             <article>
-                <h3>Projet 2</h3>
-                <p>Description du projet.</p>
-                <p>Technologies : PHP, MySQL</p>
-                <a href="#">GitHub</a>
+                <h3>FleetFlow – Delivery Management API</h3>
+                <p>Développement d'une API REST de gestion de livraisons (clients, chauffeurs, véhicules, suivi des statuts).</p>
+                <p>Technologies : Spring Boot-Spring Data JPA  · MapStruct  · Docker · Swagger</p>
+                <a href="https://github.com/Souhayb120/FleetFlow">GitHub</a>
+            </article>
+
+               <article>
+                <h3>Application de gestion HealthCare</h3>
+                <p>Conception et développement d'une API REST de gestion médicale (patients, médecins, rendez-vous, dossiers).</p>
+                <p>Technologies : Spring Boot/Security · Spring Data JPA · Docker · Swagger</p>
+                <a href="https://github.com/ENAA-School-Student/HealthCareAppAyoub">GitHub</a>
             </article>
 
             <article>
-                <h3>Projet 3</h3>
-                <p>Description du projet.</p>
-                <p>Technologies : Bootstrap</p>
-                <a href="#">GitHub</a>
+                <h3>FleetFlow – Delivery Management API</h3>
+                <p>Développement d'une API REST de gestion de livraisons (clients, chauffeurs, véhicules, suivi des statuts).</p>
+                <p>Technologies : Spring Boot-Spring Data JPA  · MapStruct  · Docker · Swagger</p>
+                <a href="https://github.com/Souhayb120/FleetFlow">GitHub</a>
             </article>
 
         </section>
@@ -135,33 +151,51 @@
         <section id="contact">
 
             <h2>Contact</h2>
+<form class="contact-form">
+    <div class="form-group">
+        <label for="name" class="form-label">
+            Nom complet
+        </label>
 
-            <form>
+        <input
+            type="text"
+            id="name"
+            class="form-input"
+            placeholder="Entrez votre nom"
+            required
+        >
+    </div>
+    <div class="form-group">
+        <label for="email" class="form-label">
+            Adresse Email
+        </label>
 
-                <label>Nom :</label>
-                <input type="text">
+        <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="exemple@gmail.com"
+            required
+        >
+    </div>
+    <div class="form-group">
+        <label for="message" class="form-label">
+            Votre message
+        </label>
 
-                <br><br>
+        <textarea
+            id="message"
+            class="form-textarea"
+            rows="6"
+            placeholder="Écrivez votre message..."
+            required
+        ></textarea>
+    </div>
+    <button type="submit" class="submit-btn">
+        Envoyer le message
+    </button>
 
-                <label>Email :</label>
-                <input type="email">
-
-                <br><br>
-
-                <label>Message :</label>
-
-                <br>
-
-                <textarea rows="5"></textarea>
-
-                <br><br>
-
-                <button type="submit">
-                    Envoyer
-                </button>
-
-            </form>
-
+</form>
         </section>
 
     </main>
@@ -169,6 +203,6 @@
     <footer>
         <p>© 2026 Ayoub Hadi - Tous droits réservés</p>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
