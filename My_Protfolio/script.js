@@ -1,4 +1,23 @@
 
+   function sendEmail(event){
+     event.preventDefault();
+     let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value
+     }
+      console.log("Params:", parms); 
+
+     emailjs.send("service_p2esfeb","template_c5n2cfd",parms).then(function () {
+            alert("Email has been sent!");
+        })
+        .catch(function (error) {
+            alert("Failed to send email: " + JSON.stringify(error));
+            console.error("EmailJS error:", error);
+        });
+        return false;
+   }
+
 const themeBtn = document.querySelector(".theme-toggle");
 const icon = document.querySelector(".theme-toggle i");
 

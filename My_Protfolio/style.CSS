@@ -154,7 +154,14 @@ body.dark-mode img {
 body.dark-mode .theme-toggle {
     color: #fbbf24;
 }
+body.dark-mode .btn,
+body.dark-mode .btn-filled {
+  color: var(--text);
+}
 
+body.dark-mode .btn-filled {
+  background-color: var(--green-dark);
+}
 
 
 main {
@@ -191,18 +198,34 @@ h2::after {
 
 #accueil {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 50px;
-
     min-height: 80vh;
 }
 
 .hero-left {
     flex: 1;
+}
+.btns{
+    display: flex;
+    padding: 5px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.btn{
+display: inline-block;
+background: transparent;
+padding: 0.75rem 2rem;
+text-decoration: none;
+border: 1.5px solid var(--green);
+border-radius: 20px;
+cursor: pointer;
+}
+.btn:hover{
+    background-color: green;
+    color: white;
+  transform: translateY(-2px);
 }
 
 .hero-right {
@@ -210,7 +233,10 @@ h2::after {
     display: flex;
     justify-content: center;
 }
-
+.btn-filled {
+  background: var(--green);
+  color: white;
+}
 
 .hero-right{
     flex:1;
@@ -387,6 +413,7 @@ aside {
     display: block;
     margin: 2rem auto 0;
     transition: .25s;
+    cursor: pointer;
 }
 .submit-btn:hover {
     background: var(--green-dark);
