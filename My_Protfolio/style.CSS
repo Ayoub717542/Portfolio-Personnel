@@ -76,30 +76,6 @@ nav a:hover {
     color: var(--green);
 }
 
-body {
-    transition:
-        background .35s ease,
-        color .35s ease;
-}
-
-header,
-#competences,
-#apropos section,
-#projets article,
-.contact-form,
-.form-input,
-.form-textarea,
-aside,
-footer,
-nav a,
-.skill-tag {
-    transition:
-        background .35s ease,
-        color .35s ease,
-        border-color .35s ease;
-}
-
-
 body.dark-mode {
     --white: #111827;
     --light-bg: #1f2937;
@@ -189,13 +165,9 @@ h2::after {
     height: 3px;
     background: var(--green);
     left:50%;
-    width:70px;
-        transform:translateX(-50%);
-
-
+    width:100%;
+    transform:translateX(-50%);
 }
-
-
 #accueil {
     display: flex;
     align-items: center;
@@ -207,19 +179,20 @@ h2::after {
 .hero-left {
     flex: 1;
 }
+
 .btns{
     display: flex;
-    padding: 5px;
+    padding: 5px 0px 0px 0px;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 .btn{
 display: inline-block;
 background: transparent;
-padding: 0.75rem 2rem;
+padding: 0.5rem 0.8rem;
 text-decoration: none;
 border: 1.5px solid var(--green);
-border-radius: 20px;
+border-radius: 10   px;
 cursor: pointer;
 }
 .btn:hover{
@@ -253,7 +226,7 @@ cursor: pointer;
     width:520px;
     height:520px;
     background:#1b2430;
-    border-radius: 50%;
+    border-radius: 55% 45% 65% 35% / 40% 60% 40% 60%;
     z-index:0;
 }
 
