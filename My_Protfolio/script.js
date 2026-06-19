@@ -17,6 +17,13 @@
         });
         return false;
    }
+const navToggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector("header nav");
+
+
+navToggle.addEventListener("click", function () {
+    nav.classList.toggle("active");
+});
 
 const themeBtn = document.querySelector(".theme-toggle");
 const icon = document.querySelector(".theme-toggle i");
