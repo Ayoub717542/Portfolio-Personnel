@@ -1,7 +1,7 @@
 
    function sendEmail(event){
-     event.preventDefault();
-   
+    event.preventDefault();
+
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
@@ -88,5 +88,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section, article').forEach(el => {
   observer.observe(el);
 });
+
+
 
 
