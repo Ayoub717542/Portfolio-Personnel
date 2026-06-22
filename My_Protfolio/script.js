@@ -1,13 +1,39 @@
 
    function sendEmail(event){
      event.preventDefault();
-     let parms = {
-        name : document.getElementById("name").value,
-        email : document.getElementById("email").value,
-        message : document.getElementById("message").value
-     }
-      console.log("Params:", parms); 
+   
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+     
 
+    let valid = true;
+
+   if (name === "") {
+        document.getElementById('name-error').textContent = "Le nom est obligatoire";
+        valid = false;
+    } else {
+        document.getElementById('name-error').textContent = "";
+    }
+    if (email === "" || !email.includes("@")) {
+        document.getElementById('email-error').textContent = "Email invalide";
+        valid = false;
+    } else {
+        document.getElementById('email-error').textContent = "";
+    }
+    if (message === "") {
+        document.getElementById('message-error').textContent = "Le message est obligatoire";
+        valid = false;
+    } else {
+        document.getElementById('message-error').textContent = "";
+    }
+
+    if(valid){
+       let parms = {
+            name: name,
+            email: email,
+            message: message
+        };
      emailjs.send("service_p2esfeb","template_c5n2cfd",parms).then(function () {
             alert("Email has been sent!");
         })
@@ -16,7 +42,7 @@
             console.error("EmailJS error:", error);
         });
         return false;
-   }
+   }}
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector("header nav");
 
