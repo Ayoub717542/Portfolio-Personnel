@@ -246,6 +246,14 @@ aside { background: #ecfdf5; padding: 1.5rem; border-radius: 10px; margin: 3rem 
 }
 .form-textarea { min-height: 180px; resize: vertical; }
 
+.my_boutique_img{
+  width: 100%;
+ max-height: 220px;
+  object-fit: contain;   /* shows the whole image, no cropping */
+  object-position: center;
+  background: #0d0e12;  
+}
+
 .submit-btn {
     width: fit-content;
     min-width: 220px;
