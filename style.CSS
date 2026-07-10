@@ -23,7 +23,7 @@ body {
 }
 
 header {
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 4rem;
@@ -171,13 +171,14 @@ h2::after {
 body:not(.dark-mode) .right-side::before { background: #ecfdf5; }
 
 #accueil img {
-    width: 60%;
+    width: 80%;
     position: relative;
     z-index: 2;
     display: block;
     object-fit: contain;
     transform: translateY(-25px);
     margin: auto;
+    border-radius: 20%; 
 }
 
 #apropos section {
@@ -247,11 +248,13 @@ aside { background: #ecfdf5; padding: 1.5rem; border-radius: 10px; margin: 3rem 
 .form-textarea { min-height: 180px; resize: vertical; }
 
 .my_boutique_img{
-  width: 100%;
- max-height: 220px;
-  object-fit: contain;   /* shows the whole image, no cropping */
-  object-position: center;
-  background: #0d0e12;  
+   width: 100%;
+    height: 220px;
+    object-fit:contain;
+    object-position: center;
+    border-radius: 10px;
+    background: black;
+   
 }
 
 .submit-btn {
