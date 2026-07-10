@@ -150,7 +150,31 @@ h2::after {
 }
 .btn:hover { background-color: green; color: white; transform: translateY(-2px); }
 .btn-filled { background: var(--green); color: white; }
+.links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
 
+.links a {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1.5px solid var(--green);
+    border-radius: 50%;
+    color: var(--green);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    background: var(--green);
+    color: white;
+    transform: translateY(-3px);
+}
 .right-side {
     flex: 1;
     display: flex;
